@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>¿Qué es Docker? - Juan Pablo Firrincieli</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<style>
+			body:after {
+			content: url(img/ninja-logo.svg);
+			width: 15%;
+			position: fixed;
+			bottom: 3.5em;
+			left: 3.5em; }
+		.reveal section img { background:none; border:none; box-shadow:none; }
+		.reveal	h3, .reveal h1, .reveal	h2, .reveal p, .reveal	li {
+				text-shadow: 0px 2px 3px #555;
+				}
+		.reveal section img {
+		    margin: 5px 0px;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+					<section data-background="img/fondo.jpg">
+					<h3>Introducción a Docker</h3>
+
+					<img data-src="img/Whale.png" width="20%">
+					<br/>
+					<p>
+						<small>Por <a href="https://plus.google.com/+JuanPabloFirrincieli">Juan Pablo Firrincieli</a></small>
+					</p>
+				</section>
+
+				<section data-background="img/fondo.jpg">
+					<h3>Acerca de mi..</h3>
+					<img data-src="img/yo.jpg" width="30%" style="box-shadow: 4px 4px 8px #000;border-radius: 20px;float:left;">
+					<ul>
+						<li>Arquitectura de Seguridad</li>
+						<li>DevOps - SysAdmin</li>
+						<li>18 años de experiencia</li>
+						<li>Linux Fan</li>
+						<li>Tipo Serio</li>
+					</ul>
+				</section>
+				<section data-background="img/fondo.jpg">
+					<h3>¿Qué es Docker?</h3>
+					<small><blockquote cite="https://es.wikipedia.org/wiki/Docker_(software)">&ldquo;Es un proyecto de código abierto que automatiza el despliegue de aplicaciones dentro de contenedores de software, proporcionando una capa adicional de abstracción y automatización de Virtualización a nivel de sistema operativo en Linux. Docker utiliza características de aislamiento de recursos del kernel de Linux, tales como cgroups y espacios de nombres (namespaces) para permitir que "contenedores" independientes se ejecuten dentro de una sola instancia de Linux, evitando la sobrecarga de iniciar y mantener máquinas virtuales.&rdquo;</blockquote></small>
+				</section>
+				<section data-transition="zoom" data-background="img/what.gif" data-background-transition="zoom">
+				</section>
+				<section data-background="img/fondo.jpg">
+					<section data-background="img/fondo.jpg">
+						<h3>Entonces... ¿Qué es Docker?</h3>
+					</section>
+					<section data-background="img/fondo.jpg">
+						<h3>¿Qué es una máquina virtual?</h3>
+						<img class="fragment fade-down" data-src="img/containers.svg" width="30%" data-fragment-index="5">
+						</br>
+						<img class="fragment fade-down" data-src="img/vmos.svg" width="30%" data-fragment-index="4">
+						</br>
+						<img class="fragment fade-down" data-src="img/hyper.svg" width="30%" style="box-shadow: 4px 4px 8px #000;" data-fragment-index="3">
+						</br>
+						<img class="fragment fade-down" data-src="img/os.svg" width="30%" style="box-shadow: 4px 4px 8px #000;z-index: 0;" data-fragment-index="2">
+						</br>
+						<img class="fragment fade-up" data-src="img/hard.svg" width="30%" style="box-shadow: 4px 4px 8px #000;" data-fragment-index="1" >
+					</section>
+					<section data-background="img/fondo.jpg">
+						<h3>¿Qué es un contenedor?</h3>
+						<img class="fragment fade-down" data-src="img/containers.svg" width="30%" data-fragment-index="4">
+						</br>
+						<img class="fragment fade-down" data-src="img/dockerengine.png" width="30%" style="box-shadow: 4px 4px 8px #000;" data-fragment-index="3">
+						</br>
+						<img class="fragment fade-down" data-src="img/os.svg" width="30%" style="box-shadow: 4px 4px 8px #000;z-index: 0;" data-fragment-index="2">
+						</br>
+						<img class="fragment fade-up" data-src="img/hard.svg" width="30%" style="box-shadow: 4px 4px 8px #000;" data-fragment-index="1" >
+					</section>
+					<section data-background="img/fondo.jpg">
+						<h3>Máquina Virtual vs Contenedor</h3>
+						<table>
+								<tr>
+									<td><img data-src="img/containers.svg">
+									<img data-src="img/vmos.svg">
+									<img data-src="img/hyper.svg" style="box-shadow: 4px 4px 8px #000;">
+									<img data-src="img/os.svg" style="box-shadow: 4px 4px 8px #000;">
+									<img data-src="img/hard.svg" style="box-shadow: 4px 4px 8px #000;"></td>
+									<td><img data-src="img/containers.svg">
+									<img data-src="img/dockerengine.png" style="box-shadow: 4px 4px 8px #000;">
+									<img data-src="img/os.svg" style="box-shadow: 4px 4px 8px #000;">
+									<img data-src="img/hard.svg" style="box-shadow: 4px 4px 8px #000;"></td>
+								</tr>
+						</table>					
+					</section>
+					<section data-background="img/fondo.jpg">
+						<h3>¡Podemos mezclar ambas tecnologías!</h3>
+							<img data-src="img/todo.png" style="box-shadow: 4px 4px 8px #000;"><br/>
+							<img data-src="img/think.gif" width="30%" style="box-shadow: 4px 4px 8px #000;">
+					</section>
+				</section>
+				<section data-background="img/fondo.jpg">
+					<section data-background="img/fondo.jpg">
+						<h3>Docker es:</h3>
+						<p>Una tecnología de contenedores que se destaca por:</p>
+						<ul>
+							<li class="fragment grow">Facilidad</li>
+							<li class="fragment grow">Imágenes</li>
+							<li class="fragment grow">Registro</li>
+							<li class="fragment grow">Servicios</li>
+						</ul>
+					</section>
+					<section data-background="img/fondo.jpg">
+						<h3>¿Fácil?</h3>
+						<p>Podemos definir una imagen por medio de un sólo archivo de texto llamado Dockerfile, por ejemplo:</p>
+						<pre><code class="hljs" data-trim contenteditable>
+FROM php:7.1-apache
+COPY src/ /var/www/html/
+EXPOSE 80
+						</code></pre>
+					</section>
+					<section data-background="img/fondo.jpg">
+						<h3>Imágenes</h3>
+						<img data-src="img/docker2contenedor.svg">
+					</section>
+					<section data-background="img/fondo.jpg">
+						<h3>Registro</h3>
+						<img data-src="img/Diapositive1.png">
+					</section>
+					<section data-background="img/fondo.jpg">
+						<h3>Servicios <img width="8%" data-src="img/swarmnado.gif"></h3>
+						<img data-src="img/nginxservicio.png">
+					</section>
+				</section>
+				<section data-background="img/fondo.jpg">
+					<h3>Etapas de Docker</h3>
+					<img data-src="img/docker-stages.png">
+				</section>
+				<section data-background="img/fondo.jpg">
+					<h3>¡Demo!</h3>
+				</section>
+				<section data-background="img/fondo.jpg">
+					<h3>¿Preguntas?</h3>
+					<img data-src="img/gollum.gif" style="box-shadow: 4px 4px 8px #000;border-radius: 20px;">
+				</section>
+				<section data-background="img/fondo2.jpg">
+					<audio data-autoplay src="music/end.mp3"></audio>
+					<h3>Información útil:</h3>
+					<ul>
+						<li><a href="https://linuxacademy.com/refer?063efcce6ced8c0095d5fdd8e1c9fdad">LinuxAcademy</a></li>
+						<li><a href="https://docs.docker.com/">docs.docker.com</a></li>
+						<li><a href="https://www.digitalocean.com/community/tutorials/docker-explicado-como-crear-contenedores-de-docker-corriendo-en-memcached-es">DigitalOcean</a></li>
+						<li><a href="https://github.com/brunocascio/docker-espanol">Docker en español</a></li>
+						<li><a href="mailto:juan.firrincieli@bbva.com?Subject=Charla%20Docker" target="_top">juan.firrincieli@bbva.com</a></li>
+						<li><a href="mailto:jpfirr@gmail?Subject=Charla%20Docker" target="_top">jpfirr@gmail.com</li>
+						<li><a href="https://www.linkedin.com/in/jpfirr/">jpfirr LinkedIn</li>
+					</ul>
+					</br></br></br></br></br>
+					<h3>Fin...</h3>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
